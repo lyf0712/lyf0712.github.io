@@ -47,30 +47,38 @@
       body {
         background-color: #f8fafc;
         -webkit-tap-highlight-color: transparent;
+        overscroll-behavior-y: none; /* Prevent elastic bounce on iOS */
       }
       /* Hide scrollbar for clean UI */
       ::-webkit-scrollbar {
         width: 0px;
         background: transparent;
       }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
       /* Dark mode body background transition */
       .dark body {
         background-color: #020617;
       }
       
       /* --- Mobile Safe Area Utilities --- */
-      /* Top padding: 2rem (approx 32px) + Device Safe Area */
-      .pt-safe-8 {
-        padding-top: 2rem; /* Fallback */
-        padding-top: calc(2rem + constant(safe-area-inset-top)); /* iOS 11.0 */
-        padding-top: calc(2rem + env(safe-area-inset-top)); /* Modern Browsers */
+      
+      /* Header Top Padding: 1rem base + Safe Area */
+      .pt-safe-top {
+        padding-top: 1rem; 
+        padding-top: calc(1rem + env(safe-area-inset-top));
       }
       
-      /* Bottom padding: 2rem + Device Safe Area (Home Indicator) */
-      .pb-safe-8 {
-        padding-bottom: 2rem; /* Fallback */
-        padding-bottom: calc(2rem + constant(safe-area-inset-bottom));
-        padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+      /* Bottom Padding: 1rem base + Safe Area */
+      .pb-safe-bottom {
+        padding-bottom: 1rem;
+        padding-bottom: calc(1rem + env(safe-area-inset-bottom));
       }
     </style>
 
@@ -92,7 +100,7 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/assets/index-F3IVG1_z.js"></script>
+  <script type="module" crossorigin src="/assets/index-_nXq5Vfq.js"></script>
 </head>
   <body>
     <div id="root"></div>
